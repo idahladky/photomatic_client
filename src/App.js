@@ -3,6 +3,7 @@ import './App.css';
 import React from "react";
 import { Route, Switch, Link } from "react-router-dom"
 import Home from "./components/Home"
+import Show from "./components/Show"
 
 function App() {
 
@@ -78,12 +79,13 @@ function App() {
       <h1>Photomatic</h1>
 
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/photo_posts">Home</Link>
       </nav>
 
       <main>
         <Switch>
-          <Route exact path="/photo_posts" render={(rp) => <Home selectPost={selectPost} {...rp} posts={posts} deletePost={deletePost}/>} />
+          <Route exact path="/photo_posts" render={(rp) => <Home selectPost={selectPost} {...rp} posts={posts} />} />
+          <Route exact path="/photo_posts/:id" render={(rp) => <Show {...rp} post={selectedPost} />} />
         </Switch>
       </main>
     </div>
@@ -91,3 +93,5 @@ function App() {
 }
 
 export default App;
+
+// selectPost={selectPost} deletePost={deletePost}

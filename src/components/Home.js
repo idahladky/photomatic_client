@@ -8,12 +8,12 @@ const Home = (props) => {
         <div className="container">
             <div className="flex">
                 {posts.map((post) => (
-                    <div>
+                    // <div>
                         <div className="square">
                             <h1>{post.notes}</h1>
                             <img src={post.image} />
                         </div>
-                    </div>
+                    // </div>
                 ))}
             </div>
             <div className="filling-empty-space-childs"></div>
