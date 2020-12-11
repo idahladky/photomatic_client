@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Link } from "react-router-dom"
+import Home from "./components/Home"
 
 function App() {
 
-  const url = "https://localhost:3000"
+  const url = "http://localhost:3000"
   // const url = "heroku url"
   const [posts, setPosts] = React.useState([]) // store API data, initialize empty array
 
@@ -73,8 +74,18 @@ function App() {
 
 
   return (
-    <div>
-      <h1>hello world</h1>
+    <div className="App">
+      <h1>Photomatic</h1>
+
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
+
+      <main>
+        <Switch>
+          <Route exact path="/photo_posts" render={(rp) => <Home selectPost={selectPost} {...rp} posts={posts} deletePost={deletePost}/>} />
+        </Switch>
+      </main>
     </div>
   );
 }
