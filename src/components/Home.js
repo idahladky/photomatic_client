@@ -20,7 +20,7 @@ const Home = (props) => {
         </div>
     )
 
-    const loading = <h1>Loading...</h1>
+    const loading = <h1 className="loading">Loading...</h1>
 
     return posts.length > 0 ? loaded() : loading
 }

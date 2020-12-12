@@ -21,7 +21,7 @@ const Form = (props) => {
                 <label>Picture:</label><input
                     type="text"
                     name="image"
-                    value={formData.image}
+                    // value={formData.image}
                     onChange={handleChange}
                 />
             </div>

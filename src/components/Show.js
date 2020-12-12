@@ -10,11 +10,11 @@ const Show = (props) => {
     return (
         <div className="show-container">
             <div className="square">
-                <img src={require("../images/River_reflection.jpg")}/>
+                {/* <img src={require("../images/River_reflection.jpg")}/> */}
             </div>
             <div className="col-6">
-                <p>notes{post.notes}</p>
-                <h2>author{post.author}</h2>
+                <p>{post.notes}</p>
+                <h2>{post.author}</h2>
                 <div>
                     <button onClick={() => {
                         props.selectPost(post)

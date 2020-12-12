@@ -9,7 +9,7 @@ import Form from "./components/Form"
 function App() {
 
   // const url = "http://localhost:3000"
-  const url = "http://thephotomaticapi.herokuapp.com"
+  const url = "https://thephotomaticapi.herokuapp.com"
   const [posts, setPosts] = React.useState([]) // store API data, initialize empty array
 
   // empty post
