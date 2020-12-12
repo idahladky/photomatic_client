@@ -8,12 +8,12 @@ const Home = (props) => {
         <div className="container">
             <div className="flex">
                 {posts.map((post) => (
-                    // <div>
-                        <div className="square">
-                            <h1>{post.notes}</h1>
-                            <img src={post.image} />
-                        </div>
-                    // </div>
+                    <div className="square" onClick={() => {
+                        props.selectPost(post)
+                        props.history.push(`/photo_posts/${post.id}`)}}>
+                        <img src={require("../images/River_reflection.jpg")} />
+                        <p>{post.notes}</p>
+                    </div>
                 ))}
             </div>
             <div className="filling-empty-space-childs"></div>

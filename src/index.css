@@ -1,29 +1,32 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   font-size: 36px;
 }
+.nav-container {
+  border-bottom: 1px rgb(201, 201, 201) solid;
+}
+
+h1 {
+  font-family: 'Norican', cursive;
+  text-align: left;
+  padding: .25em .75em;
+}
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  height: 600px;
   overflow: hidden;
   margin-top: 10px;
+  justify-content: center;
+}
+
+.show-container {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
 }
 
 .flex {
@@ -34,10 +37,33 @@ code {
   height: 300px;
   width: 300px;
   border: black solid 1px;
+  margin: .25em;
+}
+
+.col-6 {
+  padding: .5em;
+}
+
+p {
+  font-size: .75em;
+  padding-bottom: .5em;
+  text-align: left;
+}
+
+h2 {
+  font-size: .75em;
+  text-align: left;
+  padding-bottom: .5em;
 }
 
 .filling-empty-space-childs {
   width: 25%;
   height:0;
   flex-grow: 3;
+}
+
+button {
+  font-size: .5em;
+  padding: .2em 1.5em;
+  margin: 0 .5em;
 }

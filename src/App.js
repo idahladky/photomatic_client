@@ -4,6 +4,7 @@ import React from "react";
 import { Route, Switch, Link } from "react-router-dom"
 import Home from "./components/Home"
 import Show from "./components/Show"
+import Form from "./components/Form"
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
       },
       body: JSON.stringify(post)
     })
-    .then(response => getPosts())
+    .then((response) => getPosts())
   }
 
   const selectPost = (post) => {
@@ -60,7 +61,7 @@ function App() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newPost)
-    }).then(response => {
+    }).then((response) => {
       getPosts()
     })
   }
@@ -68,24 +69,25 @@ function App() {
   // Delete //
   const deletePost = (post) => {
     fetch(`${url}/photo_posts/${post.id}`, {
-      method: "delete",
+      method: "delete"
     })
-    .then(response => getPosts())
+    .then((response) => getPosts())
   }
 
 
   return (
-    <div className="App">
-      <h1>Photomatic</h1>
-
-      <nav>
-        <Link to="/photo_posts">Home</Link>
-      </nav>
+    <div>
+      <div className="container nav">
+        <h1>Photomatic</h1>
+        <Link to="/photo_posts/new"><button>New Post</button></Link>
+      </div>
 
       <main>
         <Switch>
-          <Route exact path="/photo_posts" render={(rp) => <Home selectPost={selectPost} {...rp} posts={posts} />} />
-          <Route exact path="/photo_posts/:id" render={(rp) => <Show {...rp} post={selectedPost} />} />
+          <Route exact path="/photo_posts" render={(rp) => <Home {...rp} posts={posts} selectPost={selectPost} />} />
+          <Route exact path="/photo_posts/new" render={(rp) => <Form {...rp} label="create" posts={posts} selectPost={selectPost} post={emptyPost} handleSubmit={handleCreate} />} />
+          <Route exact path="/photo_posts/:id/edit" render={(rp) => <Form {...rp} label="update" post={selectedPost} handleSubmit={handleUpdate} />} />
+          <Route exact path="/photo_posts/:id" render={(rp) => <Show {...rp} post={selectedPost} selectPost={selectPost} deletePost={deletePost}/>} />
         </Switch>
       </main>
     </div>
