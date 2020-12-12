@@ -5,32 +5,32 @@
   padding: 0;
   font-size: 36px;
 }
-.nav-container {
+nav {
   border-bottom: 1px rgb(201, 201, 201) solid;
+  padding: .25em .75em;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
   font-family: 'Norican', cursive;
   text-align: left;
-  padding: .25em .75em;
 }
 
-.container {
+.index-show {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
-  margin-top: 10px;
   justify-content: center;
+  padding: 2em;
 }
 
 .show-container {
   display: flex;
   margin-top: 10px;
   justify-content: center;
-}
-
-.flex {
-  display: flex;
 }
 
 .square {

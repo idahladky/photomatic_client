@@ -6,7 +6,7 @@ const Home = (props) => {
 
     const loaded = () => (
         <div className="container">
-            <div className="flex">
+            <div className="index-show">
                 {posts.map((post) => (
                     <div className="square" onClick={() => {
                         props.selectPost(post)

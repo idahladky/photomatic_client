@@ -8,8 +8,8 @@ import Form from "./components/Form"
 
 function App() {
 
-  const url = "http://localhost:3000"
-  // const url = "heroku url"
+  // const url = "http://localhost:3000"
+  const url = "http://thephotomaticapi.herokuapp.com"
   const [posts, setPosts] = React.useState([]) // store API data, initialize empty array
 
   // empty post
@@ -77,10 +77,12 @@ function App() {
 
   return (
     <div>
-      <div className="container nav">
-        <h1>Photomatic</h1>
-        <Link to="/photo_posts/new"><button>New Post</button></Link>
-      </div>
+      <nav>
+        <div className="nav-container">
+          <h1>Photomatic</h1>
+          <Link to="/photo_posts/new"><button>New Post</button></Link>
+        </div>
+      </nav>
 
       <main>
         <Switch>
