@@ -11,8 +11,7 @@ const Home = (props) => {
                     <div className="square" onClick={() => {
                         props.selectPost(post)
                         props.history.push(`/photo_posts/${post.id}`)}}>
-                        <img src={require("../images/River_reflection.jpg")} />
-                        <p>{post.notes}</p>
+                        {/* <img src={require("../images/River_reflection.jpg")} /> */}
                     </div>
                 ))}
             </div>

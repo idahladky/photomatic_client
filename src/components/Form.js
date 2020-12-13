@@ -15,39 +15,41 @@ const Form = (props) => {
     }
 
     return (
-        <>
-        <form onSubmit={handleSubmit}>
-            <div className="field-wrap">
-                <label>Picture:</label><input
-                    type="text"
-                    name="image"
-                    // value={formData.image}
-                    onChange={handleChange}
-                />
-            </div>
-            <div className="field-wrap">
-                <label>Notes:</label><input
-                    type="textarea"
-                    rows="10"
-                    wrap="soft"
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
-                />
-            </div>
-            <div className="field-wrap">
-                <label>Author:</label><input
-                    type="text"
-                    name="author"
-                    value={formData.author}
-                    onChange={handleChange}
-                />
-            </div>
-            <input type="submit" value={props.label} />
-        </form>
+        <div className="form-container">
+            <form onSubmit={handleSubmit}>
+                <div className="field-wrap">
+                    <label>Picture:</label><input
+                        type="text"
+                        name="image"
+                        // value={formData.image}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="field-wrap">
+                    <label>Notes:</label><input
+                        className="textarea"
+                        type="textarea"
+                        rows="10"
+                        wrap="soft"
+                        name="notes"
+                        value={formData.notes}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="field-wrap">
+                    <label>Author:</label><input
+                        type="text"
+                        name="author"
+                        value={formData.author}
+                        onChange={handleChange}
+                    />
+                </div>
+                <input type="submit" value={props.label.toUpperCase()} />
+                <Link to="/photo_posts"><button className="form-button">HOME</button></Link>
+            </form>
 
-        <Link to="/photo_posts"><button>Home</button></Link>
-        </>
+            
+        </div>
     )
 }
 

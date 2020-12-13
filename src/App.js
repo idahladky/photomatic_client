@@ -79,7 +79,7 @@ function App() {
     <div>
       <nav>
         <div className="nav-container">
-          <h1>Photomatic</h1>
+          <Link to="/photo_posts" className="app-name"><h1>Photomatic</h1></Link>
           <Link to="/photo_posts/new"><button>New Post</button></Link>
         </div>
       </nav>
